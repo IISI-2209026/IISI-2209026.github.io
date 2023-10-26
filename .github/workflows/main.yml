@@ -28,8 +28,8 @@ jobs:
       run: dotnet publish IISI-2209026/IISI_2209026.csproj -c Release -o release --nologo
     
     # 修改index.html的base href -- 從"/"改為"/IISI-2209026/"
-    - name: Change base-tag in index.html from / to IISI-2209026
-      run: sed -i 's/<base href="\/" \/>/<base href="\/IISI-2209026\/" \/>/g' release/wwwroot/index.html
+    #- name: Change base-tag in index.html from / to IISI-2209026
+    #  run: sed -i 's/<base href="\/" \/>/<base href="\/IISI-2209026\/" \/>/g' release/wwwroot/index.html
     
     # 複製index.html內容到404.html
     - name: copy index.html to 404.html
@@ -37,7 +37,7 @@ jobs:
 
     # 加入一個.nojekyll檔案
     - name: Add .nojekyll file
-      run: touch release/wwwroot/.nojekyll && touch release/wwwroot/_content/.nojekyll && touch release/wwwroot/_framework/.nojekyll
+      run: touch release/wwwroot/.nojekyll 
     
     # 將release/wwwroot的程式碼，push到gh-pages分支
     - name: Commit wwwroot to GitHub Pages
