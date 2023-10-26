@@ -37,7 +37,7 @@ jobs:
 
     # 加入一個.nojekyll檔案
     - name: Add .nojekyll file
-      run: touch release/wwwroot/.nojekyll
+      run: touch release/wwwroot/.nojekyll && touch release/wwwroot/_content/.nojekyll && touch release/wwwroot/_framework/.nojekyll
     
     # 將release/wwwroot的程式碼，push到gh-pages分支
     - name: Commit wwwroot to GitHub Pages
