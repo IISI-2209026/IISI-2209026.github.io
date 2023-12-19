@@ -1,0 +1,8 @@
+﻿services:
+  iisi_2209026:
+    image: iisi_2209026
+    build:
+      context: .
+      dockerfile: IISI-2209026/Dockerfile
+    ports:
+      - 80:80
